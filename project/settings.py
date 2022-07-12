@@ -83,9 +83,6 @@ DATABASES = {
         'USER': 'b3e2a875ac57f4',
         'PASSWORD': '31ef2d7d',
         'PORT': '3306',
-        'OPTIONS': {
-            'init_command': 'SET default_storage_engine=InnoDB'
-        }
     }
 }
 
