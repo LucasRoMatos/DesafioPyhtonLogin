@@ -87,7 +87,6 @@ DATABASES = {
             'init_command': 'SET default_storage_engine=InnoDB'
         }
     }
-    mysql://:@/?reconnect=true
 }
 
 
