@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-*ny4rmy)d95gu!ugn@9eh^olj*47r#)gkj@0=9=0hd6e5&mq7&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://login-desafio.herokuapp.com/']
 
 
 # Application definition
@@ -120,7 +120,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-django_heroku.settings(locals())
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
@@ -131,3 +131,5 @@ STATICFILES_DIR = ('/static/')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+django_heroku.settings(locals())
