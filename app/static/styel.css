@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 19%
+}
+
+.botoes a{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+}
+
+.botoe {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

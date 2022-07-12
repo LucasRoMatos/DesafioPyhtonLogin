@@ -1,0 +1,36 @@
+{%extends 'main.html'%}
+
+{% block content %}
+<form name="form-usuarios" id="formUsuarios" method="post" action="/modif/">
+    <div class="col-6 mt-4 m-auto">
+        {% if msg %}
+            <div class="alert {{alertaerr}}">
+                {{msg}}
+            </div>
+        {% endif %}
+        {%csrf_token%}
+        <div class="info">
+            <label class="">Todos campos são obrigatórios</label>
+        </div>
+        <input class="form-control mt-2" type="text" name="nome" id="nome" placeholder="Nome Completo" value="{{user}}" maxlength="150" required>
+        <input class="form-control mt-2" type="email" name="email" id="email" placeholder="E-mail" value="{{email}}" maxlength="100" required>
+        <input class="form-control mt-2" type="text" name="country" id="country" placeholder="País" value="{{pais}}" maxlength="45" required>
+        <input class="form-control mt-2" type="text" name="es" id="es" placeholder="Estado" value="{{es}}" maxlength="45" required>
+        <input class="form-control mt-2" type="text" name="municipio" id="municipio" placeholder="Município" value="{{municipio}}" maxlength="45" required>
+        <input class="form-control mt-2" type="text" name="cep" id="cep" placeholder="CEP" value="{{cep}}" maxlength="9" required>
+        <input class="form-control mt-2" type="text" name="rua" id="rua" placeholder="Rua" value="{{rua}}" maxlength="150" required>
+        <input class="form-control mt-2" type="text" name="num" id="num" placeholder="Número" value="{{num}}" maxlength="45" required>
+        <input class="form-control mt-2" type="text" name="complemento" id="complemento" placeholder="Complemento" value="{{complemento}}" maxlength="45" required>
+        <input class="form-control mt-2" type="text" name="CPF" id="CPF" placeholder="CPF (Apenas os números)" value="{{cpf}}" maxlength="11" required >
+        <input class="form-control mt-2" type="text" name="PIS" id="PIS" placeholder="PIS (Apenas os números)" value="{{pis}}" maxlength="11" required>
+        <input class="form-control mt-2" type="password" name="senha" id="senha" placeholder="Senha" required>
+        <input class="form-control mt-2" type="password" name="repsenha" id="repsenha" placeholder="Repita sua senha" required>
+        <div class="botoe">
+            <input class="btn btn-primary mt-4" type="submit" value="Atualizar Dados Cadastrais">
+            <a type="button" href="/dashboard" class="btn btn-primary mt-4">Volte ao Dashboard</a>
+            <a type="button" href="/delet/" class="btn btn-primary mt-4">Deletar o usuário</a> 
+        </div>
+    </div>
+    
+</form>
+{% endblock %}

@@ -1,0 +1,20 @@
+{%extends 'main.html'%}
+
+{% block content %}
+<form name="form-login" id="formLogin" method="post" action="/log/">
+    <div class="col-6 mt-4 m-auto">
+        {% if msg %}
+            <div class="alert {{alertaerr}}"> {%csrf_token%} 
+                {{msg}}
+            </div>
+        {% endif %}
+        {%csrf_token%}
+        <input class="form-control mt-2" type="text" name="user" id="user" placeholder="E-mail / CPF / PIS">
+        <input class="form-control mt-2" type="password" name="senha" id="senha" placeholder="Senha">
+        <div class="botoe">
+            <input class="btn btn-primary mt-4" type="submit" value="Entrar">
+            <a type="button" href="/create/" class="btn btn-primary mt-4">Cadastre-se</a>
+        </div>
+    </div>
+</form>
+{% endblock %}

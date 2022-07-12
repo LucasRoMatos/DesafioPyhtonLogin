@@ -1,0 +1,47 @@
+{%extends 'main.html'%}
+
+{% block content %}
+<form name="form-usuarios" id="formUsuarios" method="post" action="/store/">
+    <div class="col-6 mt-4 m-auto">
+        {% if msg %}
+            <div class="alert {{alertaerr}}">
+                {{msg}}
+            </div>
+        {% endif %}
+        {% if error %}
+            <div class="alert alert-danger">
+                {{error}}
+            </div>
+        {% endif %}
+        {%csrf_token%}
+        {% if not formsome %}
+        <div class="info">
+            <label for="">Todos campos são obrigatórios</label>
+        </div>
+        <input class="form-control mt-2" type="text" name="nome" id="nome" placeholder="Nome Completo" maxlength="150" required>
+        <input class="form-control mt-2" type="email" name="email" id="email" placeholder="E-mail" maxlength="100" required>
+        <input class="form-control mt-2" type="text" name="country" id="country" placeholder="País" maxlength="145" required>
+        <input class="form-control mt-2" type="text" name="es" id="es" placeholder="Estado" maxlength="45" required>
+        <input class="form-control mt-2" type="text" name="municipio" id="municipio" placeholder="Município" maxlength="45" required>
+        <input class="form-control mt-2" type="text" name="cep" id="cep" placeholder="CEP" maxlength="9" required>
+        <input class="form-control mt-2" type="text" name="rua" id="rua" placeholder="Rua" maxlength="150" required>
+        <input class="form-control mt-2" type="text" name="num" id="num" placeholder="Número" maxlength="150" required>
+        <input class="form-control mt-2" type="text" name="complemento" id="complemento" placeholder="Complemento" maxlength="150" required>
+        <input class="form-control mt-2" type="text" name="CPF" id="CPF" placeholder="CPF (Apenas os números)" maxlength="11" required>
+        <input class="form-control mt-2" type="text" name="PIS" id="PIS" placeholder="PIS (Apenas os números)" maxlength="11" required>
+        <input class="form-control mt-2" type="password" name="senha" id="senha" placeholder="Senha" maxlength="128" required>
+        <input class="form-control mt-2" type="password" name="repsenha" id="repsenha" placeholder="Repita sua senha" maxlength="128" required>
+        <div class="botoe">
+            <input class="btn btn-primary mt-4" type="submit" value="Cadastrar">
+            <a type="button" href="/" class="btn btn-primary mt-4">Volte ao início</a>
+        </div>
+        {% endif %}
+        {% if formsome %}
+        <div class="botoe">
+            <a type="button" href="/painel/" class="btn btn-primary mt-4">Faça seu login</a>
+        </div>
+        {% endif %}
+    </div>
+    
+</form>
+{% endblock %}
