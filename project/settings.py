@@ -78,15 +78,16 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sistema',
-        'HOST': 'localhost',
-        'USER': 'root',
-        'PASSWORD': '',
+        'NAME': 'heroku_e2b566601c35324',
+        'HOST': 'us-cdbr-east-06.cleardb.net',
+        'USER': 'b3e2a875ac57f4',
+        'PASSWORD': '31ef2d7d',
         'PORT': '3306',
         'OPTIONS': {
             'init_command': 'SET default_storage_engine=InnoDB'
         }
     }
+    mysql://:@/?reconnect=true
 }
 
 
